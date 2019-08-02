@@ -423,7 +423,6 @@ static bool hdd_wait_for_recovery_completion(void)
 }
 #endif
 
-
 static int __hdd_netdev_notifier_call(struct notifier_block *nb,
 				    unsigned long state, void *data)
 {
@@ -2404,11 +2403,9 @@ int hdd_wlan_start_modules(hdd_context_t *hdd_ctx, hdd_adapter_t *adapter,
 		}
 
 
-		status = hdd_ipa_init(hdd_ctx);
-		if (status) {
-			ret = qdf_status_to_os_return(status);
+		ret = hdd_ipa_init(hdd_ctx);
+		if (ret)
 			goto err_post_disable;
-		}
 
 		hdd_sysfs_create_version_interface();
 

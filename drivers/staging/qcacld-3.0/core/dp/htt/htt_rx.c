@@ -4125,4 +4125,3 @@ void htt_deregister_rx_pkt_dump_callback(struct htt_pdev_t *pdev)
 	}
 	pdev->rx_pkt_dump_cb = NULL;
 }
-
